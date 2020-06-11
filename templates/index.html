@@ -1,0 +1,29 @@
+{% extends "bash.html" %}
+{% block bash %}
+{{ super()}}
+<div class="input" style="width: 500px; margin: auto;">
+    <h2 style="margin-top: 20px;">配置服务器</h2>
+    <form method="post" action="testsv">
+        <div class="form-group">
+          <label for="exampleInputEmail1">邮件地址</label>
+          <input name="mail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="@shblai.com">
+          <small id="emailHelp" class="form-text text-muted">example@shblai.com</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">密码</label>
+          <input name="passwd"  type="password" class="form-control" id="exampleInputPassword1" value="">
+        </div>
+        <div class="form-group">
+            <label for="host">主机</label>
+            <input name="host" type="text" class="form-control" id="host" value="smtp.163.com">
+            <small  class="form-text text-muted">smtp.163.com</small>
+          </div>
+          <div class="form-group">
+            <label for="port">端口</label>
+            <input name="port" type="number" class="form-control" id="port" value="465">
+            <small  class="form-text text-muted">不使用SLL改成25</small>
+          </div>
+        <button type="submit" name="type" class="btn btn-primary">保存配置</button>
+      </form>
+</div>
+{% endblock %}
