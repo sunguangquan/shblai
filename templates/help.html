@@ -1,0 +1,19 @@
+{% extends "bash.html" %}
+{% block bash %}
+{{ super()}}
+<div style="width: 600px; margin: auto;">
+<form action="help" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">收件人CSV</label>
+        <input name="file" type="file" class="form-control-file" id="file" webkitdirectory mozdirectory>
+    </div>
+    <button type="submit" class="btn btn-primary">发送</button>
+</form>
+</div>
+{% for d in att.keys() %}
+   <p> 这是KEY： {{ d }}</p>
+   {% endfor %}
+{% for d in att.values() %}
+   <p> 这是Value:{{ d }}</p>
+   {% endfor %}
+{% endblock %}
